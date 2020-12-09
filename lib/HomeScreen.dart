@@ -11,6 +11,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String cardString;
+  String cardName;
+  String cardImage;
+  String cardFlavor;
   List<MagicCard> cards = [];
 
   @override
@@ -30,26 +33,33 @@ class _HomeScreenState extends State<HomeScreen> {
                         cardString = text;
                       },
                     ),
-                    FlatButton(
-                      onPressed: () async {
-                        NetworkHelper networkHelper =
-                            NetworkHelper(url + cardString);
-                        var cardData = await networkHelper.getData();
-                        String cardName = cardData["cards"][0]["name"];
-                        String cardImage = cardData["cards"][0]["imageUrl"];
-                        String cardFlavor = cardData["cards"][0]["flavor"];
-                        MagicCard carta =
-                            MagicCard(cardName, cardImage, cardFlavor);
-                        setState(() {
+                    GestureDetector(
+                        onTap: () async {
+                          NetworkHelper networkHelper =
+                              NetworkHelper(url + cardString);
+                          Map<String, dynamic> cardData =
+                              await networkHelper.getData();
+                          //Card card = Card.fromJson(cardData);
                           cards.removeRange(0, cards.length);
-                          cards.add(carta);
-                        });
-                      },
-                      child: Icon(Icons.access_alarm),
-                    ),
-                    Column(
-                      children: cards,
-                    )
+                          for (int i = 0; i < cardData.length; i++) {
+                            print(cardData.length);
+                            cardName = cardData["cards"][i]["name"];
+                            cardImage = cardData["cards"][i]["imageUrl"];
+                            cardFlavor = cardData["cards"][i]["flavor"];
+                            setState(() {
+                              cards.add(
+                                  MagicCard(cardName, cardImage, cardFlavor));
+                            });
+                            print(cards[i].name);
+                          }
+                          for (int i = 0; i < cards.length; i++) {
+                            print(cards[i].name);
+                          }
+                        },
+                        child: Icon(
+                          Icons.access_alarm,
+                        )),
+                    Column(children: cards)
                   ],
                 ),
               ),
