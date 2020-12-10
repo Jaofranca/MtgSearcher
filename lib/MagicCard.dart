@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
 
 class MagicCard extends StatelessWidget {
   MagicCard(
-    this.name,
-    this.image,
-    this.flavor,
+    @required this.name,
+    @required this.image,
+    @required this.flavor,
   );
   final String name;
   final String image;
