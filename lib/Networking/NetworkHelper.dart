@@ -1,9 +1,9 @@
 import 'dart:convert';
-import 'package:MtgSearcher/Card_Model.dart';
+import 'package:MtgSearcher/Models/Card_Model.dart';
 import 'package:MtgSearcher/MagicCard.dart';
 import 'package:http/http.dart' as http;
 
-import 'Endpoints.dart';
+import '../Endpoints/Endpoints.dart';
 
 class NetworkHelper {
   NetworkHelper(this.url);

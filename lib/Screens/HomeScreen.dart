@@ -22,33 +22,36 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
+        body: Container(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    TextField(
-                      controller: _textController,
-                      /*onChanged: (text) {
-                          search();
-                        },*/
-                      onSubmitted: (text) {
-                        search();
-                      },
-                      /*onEditingComplete: search*/
-                    ),
-                    Column(
-                      children: cards,
-                    )
-                  ],
-                ),
+            TextField(
+              controller: _textController,
+              /*onChanged: (text) {
+                      search();
+                    },*/
+              onSubmitted: (text) {
+                search();
+              },
+              /*onEditingComplete: search*/
+            ),
+            Flexible(
+              child: GridView(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 0.0,
+                    mainAxisSpacing: 0.0,
+                    childAspectRatio: 0.6),
+                children: cards,
+                scrollDirection: Axis.vertical,
+                physics: BouncingScrollPhysics(),
+                padding: EdgeInsets.all(10),
               ),
-            )
+            ),
           ],
-        ),
+        )),
       ),
     );
   }

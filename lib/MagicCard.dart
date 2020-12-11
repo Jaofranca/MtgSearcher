@@ -15,10 +15,11 @@ class MagicCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(name),
           Image.network(image),
-          Text(flavor),
+          //Text(flavor),
         ],
       ),
     );
