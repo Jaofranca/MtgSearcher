@@ -1,5 +1,5 @@
 import 'package:MtgSearcher/Networking/NetworkHelper.dart';
-import 'package:MtgSearcher/MagicCard.dart';
+import 'package:MtgSearcher/Widgets/MagicCard.dart';
 import 'package:flutter/material.dart';
 
 const url = "https://api.magicthegathering.io/v1/cards?name=";
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: GridView(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 0.0,
+                    crossAxisSpacing: 2.0,
                     mainAxisSpacing: 0.0,
                     childAspectRatio: 0.6),
                 children: cards,

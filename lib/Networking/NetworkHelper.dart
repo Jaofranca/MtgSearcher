@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:MtgSearcher/Models/Card_Model.dart';
-import 'package:MtgSearcher/MagicCard.dart';
+import 'package:MtgSearcher/Widgets/MagicCard.dart';
 import 'package:http/http.dart' as http;
 
 import '../Endpoints/Endpoints.dart';
