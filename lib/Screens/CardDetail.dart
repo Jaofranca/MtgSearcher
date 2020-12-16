@@ -1,8 +1,45 @@
+import 'package:MtgSearcher/Widgets/MagicCard.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 
 class CardDetail extends StatelessWidget {
-  CardDetail(
+  final MagicCard card;
+  CardDetail(this.card);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("carta"),
+      ),
+      body: Container(
+        child: Column(
+          children: [
+            Image.network(card.image),
+            Container(
+              child: Column(
+                children: [
+                  Text("Card name: " + card.name),
+                  Text("Mana cost: " + card.manacost),
+                  //Text("Converted mana cost: "),
+                  Text("Type: " + card.type),
+                  Text("Text: " + card.text),
+                  Text("Rarity: " + card.rarity),
+                  Row(
+                    children: [
+                      Text("power: " + card.power),
+                      Text("toughness: " + card.toughness),
+                    ],
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+/*CardDetail(
     @required this.name,
     @required this.image,
     @required this.manacost,
@@ -21,39 +58,4 @@ class CardDetail extends StatelessWidget {
   final String text;
   final String rarity;
   final String power;
-  final String toughness;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("carta"),
-      ),
-      body: Container(
-        child: Column(
-          children: [
-            Image.network(image),
-            Container(
-              child: Column(
-                children: [
-                  Text("Card name: " + name),
-                  Text("Mana cost: " + manacost),
-                  //Text("Converted mana cost: "),
-                  Text("Type: " + type),
-                  Text("Text: " + text),
-                  Text("Rarity: " + rarity),
-                  Row(
-                    children: [
-                      Text("power: " + power),
-                      Text("toughness: " + toughness),
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
+  final String toughness;*/

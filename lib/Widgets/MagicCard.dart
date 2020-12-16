@@ -32,27 +32,44 @@ class MagicCard extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => CardDetail(
-              name,
-              image,
-              manacost,
-              type,
-              text,
-              rarity,
-              power,
-              toughness,
+              MagicCard(
+                this.name,
+                this.image,
+                this.manacost,
+                //@required this.cmc,
+                this.type,
+                this.text,
+                this.rarity,
+                this.power,
+                this.toughness,
+              ),
             ),
           ),
         );
       },
-      child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(name),
-            Image.network(image),
-            //Text(flavor),
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            name,
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Container(
+            height: 220,
+            width: 200,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              image: DecorationImage(
+                image: NetworkImage(image),
+                fit: BoxFit.cover,
+              ),
+              //Image.network(image),
+              //Text(flavor),
+            ),
+            //child: Text(name),
+          ),
+        ],
       ),
     );
   }

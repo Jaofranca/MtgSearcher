@@ -1,3 +1,4 @@
+import 'package:MtgSearcher/Screens/CardDetail.dart';
 import 'package:MtgSearcher/Screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
