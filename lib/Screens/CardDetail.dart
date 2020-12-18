@@ -2,29 +2,31 @@ import 'package:MtgSearcher/Widgets/MagicCard.dart';
 import 'package:flutter/material.dart';
 
 class CardDetail extends StatelessWidget {
+  CardDetail({this.card});
   final MagicCard card;
-  CardDetail(this.card);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("carta"),
       ),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.network(card.image),
             Container(
               child: Column(
                 children: [
                   Text("Card name: " + card.name),
-                  Text("Mana cost: " + card.manacost),
+                  //Text("Mana cost: " + card.manacost),
                   //Text("Converted mana cost: "),
                   Text("Type: " + card.type),
                   Text("Text: " + card.text),
                   Text("Rarity: " + card.rarity),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("power: " + card.power),
                       Text("toughness: " + card.toughness),

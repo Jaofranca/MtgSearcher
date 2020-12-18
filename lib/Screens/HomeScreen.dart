@@ -10,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool _algo = false;
   var cards = <MagicCard>[];
   var _textController = TextEditingController();
 
@@ -23,6 +24,33 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          actions: [
+            GestureDetector(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    title: Text("eae mano"),
+                    actions: [
+                      CheckboxListTile(
+                          title: Text("eae"),
+                          value: _algo,
+                          onChanged: (bool value) {
+                            setState(() {
+                              _algo = true;
+                            });
+                          })
+                    ],
+                  ),
+                  barrierDismissible: true,
+                );
+              },
+              child: Icon(Icons.accessible_forward),
+            )
+          ],
+          elevation: 0,
+          backgroundColor: ThemeData.dark().scaffoldBackgroundColor,
+          centerTitle: true,
           title: Text("MtgSearcher"),
         ),
         body: Padding(
@@ -32,11 +60,17 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               TextField(
+                style: TextStyle(fontWeight: FontWeight.bold),
+                cursorColor: Colors.green,
                 decoration: InputDecoration(
-                    labelText: "cardName",
-                    fillColor: Colors.white,
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10))),
+                  labelText: "Search Terms..",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(18),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(18),
+                  ),
+                ),
                 controller: _textController,
                 /*onChanged: (text) {
                     search();
@@ -66,3 +100,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+//#c2c2c2

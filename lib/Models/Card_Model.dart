@@ -15,5 +15,13 @@ Widget fromJson(Map<String, dynamic> cardData) {
   var power = cardData["power"] == null ? "00" : cardData["power"];
   var toughness = cardData["toughness"] == null ? "00" : cardData["toughness"];
 
-  return MagicCard(name, image, manacost, type, text, rarity, power, toughness);
+  return MagicCard(
+      name: name,
+      image: image,
+      manacost: manacost,
+      type: type,
+      text: text,
+      rarity: rarity,
+      power: power,
+      toughness: toughness);
 }
