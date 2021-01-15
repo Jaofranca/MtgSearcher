@@ -7,6 +7,7 @@ class CardDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Text power_toughness;
     return Scaffold(
       appBar: AppBar(
         title: Text("carta"),
@@ -24,7 +25,9 @@ class CardDetail extends StatelessWidget {
                   Text("Type: " + card.type),
                   Text("Card Text: " + card.text),
                   Text("Rarity: " + card.rarity),
-                  Text("P/T: " + card.power + "/" + card.toughness),
+                  power_toughness = card.power != null && card.toughness != null
+                      ? Text("P/T: " + card.power + "/" + card.toughness)
+                      : null
                 ],
               ),
             )
