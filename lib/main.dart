@@ -1,4 +1,3 @@
-import 'package:MtgSearcher/Screens/CardDetail.dart';
 import 'package:MtgSearcher/Screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
+      theme: ThemeData.dark().copyWith(),
       home: HomeScreen(),
     );
   }

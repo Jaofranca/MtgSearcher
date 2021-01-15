@@ -1,4 +1,5 @@
 import 'package:MtgSearcher/Screens/CardDetail.dart';
+import 'package:MtgSearcher/Utilities/CardContainer.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
@@ -16,7 +17,6 @@ class MagicCard extends StatelessWidget {
   final String name;
   final String image;
   final String manacost;
-  //final int cmc;
   final String type;
   final String text;
   final String rarity;
@@ -44,19 +44,10 @@ class MagicCard extends StatelessWidget {
             name,
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
-          Container(
-            height: 220,
-            width: 200,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-              image: DecorationImage(
-                image: NetworkImage(image),
-                fit: BoxFit.cover,
-              ),
-              //Image.network(image),
-              //Text(flavor),
-            ),
-            //child: Text(name),
+          CardContainer(
+            image: NetworkImage(image),
+            x: 220,
+            y: 200,
           ),
         ],
       ),

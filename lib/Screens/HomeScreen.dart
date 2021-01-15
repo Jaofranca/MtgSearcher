@@ -1,5 +1,4 @@
 import 'package:MtgSearcher/Networking/NetworkHelper.dart';
-import 'package:MtgSearcher/Utilities/Checkboxutilitaries.dart';
 import 'package:MtgSearcher/Widgets/MagicCard.dart';
 import 'package:flutter/material.dart';
 
@@ -11,56 +10,21 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  CheckboxUtilitaries check = CheckboxUtilitaries();
-
   var cards = <MagicCard>[];
   var _textController = TextEditingController();
-  bool algo = false;
-  void search() async {
-    cards = await NetworkHelper.getData(_textController.text);
-    setState(() {});
-  }
 
-  @override
-  void initState() {
-    super.initState();
-    check.isChecked = List<bool>.filled(check.checkboxtitle.length, false);
+  void search() async {
+    cards = await NetworkHelper.getData(
+      _textController.text,
+    );
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: Drawer(),
         appBar: AppBar(
-          actions: [
-            GestureDetector(
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (_) => AlertDialog(
-                      title: Text("Tipos de Busca"),
-                      content: ListView.builder(
-                        itemCount: check.checkboxtitle.length,
-                        itemBuilder: (context, index) {
-                          return CheckboxListTile(
-                              controlAffinity: ListTileControlAffinity.leading,
-                              title: Text(check.checkboxtitle[index]),
-                              value: check.isChecked[index],
-                              onChanged: (bool value) {
-                                setState(() {
-                                  check.isChecked[index] = value;
-                                  print(check.isChecked[index]);
-                                });
-                              });
-                        },
-                      ),
-                    ),
-                    barrierDismissible: true,
-                  );
-                },
-                child: Icon(Icons.settings))
-          ],
           elevation: 0,
           backgroundColor: ThemeData.dark().scaffoldBackgroundColor,
           centerTitle: true,

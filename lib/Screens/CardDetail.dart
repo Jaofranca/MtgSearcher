@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class CardDetail extends StatelessWidget {
   CardDetail({this.card});
   final MagicCard card;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,26 +13,18 @@ class CardDetail extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.network(card.image),
             Container(
+              color: Colors.black,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text("Card name: " + card.name),
-                  //Text("Mana cost: " + card.manacost),
-                  //Text("Converted mana cost: "),
                   Text("Type: " + card.type),
-                  Text("Text: " + card.text),
+                  Text("Card Text: " + card.text),
                   Text("Rarity: " + card.rarity),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("power: " + card.power),
-                      Text("toughness: " + card.toughness),
-                    ],
-                  ),
+                  Text("P/T: " + card.power + "/" + card.toughness),
                 ],
               ),
             )
@@ -41,23 +34,3 @@ class CardDetail extends StatelessWidget {
     );
   }
 }
-/*CardDetail(
-    @required this.name,
-    @required this.image,
-    @required this.manacost,
-    //@required this.cmc,
-    @required this.type,
-    @required this.text,
-    @required this.rarity,
-    @required this.power,
-    @required this.toughness,
-  );
-  final String name;
-  final String image;
-  final String manacost;
-  //final cmc;
-  final String type;
-  final String text;
-  final String rarity;
-  final String power;
-  final String toughness;*/
