@@ -15,7 +15,7 @@ This is the first app that i do using an API and i've learned a lot with it.
 ## ScreenShots
 Initial Screen         |  Search screen
 :-------------------------:|:-------------------------:
-![Tela inicial](https://github.com/Jaofranca/MtgSearcher/blob/master/AppImages/1.jpeg) |  ![Escolha de Nomes](https://github.com/Jaofranca/MtgSearcher/blob/master/AppImages/2.jpeg)
+![Tela inicial](https://github.com/Jaofranca/MtgSearcher/blob/master/AppImages/1.PNG) |  ![Procurar Cartas](https://github.com/Jaofranca/MtgSearcher/blob/master/AppImages/2.PNG)
 
 CardDetail Screen        |  
 :-------------------------:|
