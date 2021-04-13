@@ -3,7 +3,6 @@ import 'package:MtgSearcher/Widgets/MagicCard.dart';
 import 'package:flutter/material.dart';
 
 import '../Widgets/MagicCard.dart';
-import '../Widgets/MagicCard.dart';
 
 const url = "https://api.magicthegathering.io/v1/cards?name=";
 
@@ -13,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<MagicCard> cards;
+  var cards = <MagicCard>[];
   var _textController = TextEditingController();
 
   void search() async {
@@ -92,11 +91,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       }
 
                       return Padding(
-                        padding: EdgeInsets.only(top: 50),
-                        child: CircularProgressIndicator(
-                          backgroundColor: Colors.green,
-                        ),
-                      );
+                          padding: EdgeInsets.only(top: 10),
+                          child: CircularProgressIndicator(
+                            backgroundColor: Colors.green,
+                          ));
                     }),
               ],
             ),
