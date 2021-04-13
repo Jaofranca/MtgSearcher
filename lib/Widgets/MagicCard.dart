@@ -46,7 +46,7 @@ class MagicCard extends StatelessWidget {
           ),
           CardContainer(
             image: NetworkImage(image),
-            x: 220,
+            x: 250,
             y: 200,
           ),
         ],

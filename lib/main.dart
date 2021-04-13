@@ -8,7 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark().copyWith(),
+      theme: ThemeData.dark().copyWith(
+          accentColor: ThemeData.dark().scaffoldBackgroundColor,
+          primaryColor: ThemeData.dark().scaffoldBackgroundColor),
       home: HomeScreen(),
     );
   }
