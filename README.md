@@ -19,5 +19,5 @@ Initial Screen         |  Search screen
 
 CardDetail Screen        |  
 :-------------------------:|
-![Tela do jogo](https://github.com/Jaofranca/MtgSearcher/blob/master/AppImages/3.jpeg)  |
+![Tela do jogo](https://github.com/Jaofranca/MtgSearcher/blob/master/AppImages/3.PNG)  |
 
