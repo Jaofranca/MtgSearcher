@@ -1,5 +1,5 @@
 # MtgSearcher
-A Magic the gathering card searcher using **Magic the gathering API : [MagicApi](https://docs.magicthegathering.io/)** 
+A Magic the gathering card searcher made using **Magic the gathering API : [MagicApi](https://docs.magicthegathering.io/)** 
 
 
 ## About the app
