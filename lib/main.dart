@@ -1,17 +1,25 @@
-import 'package:MtgSearcher/Screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'app_module.dart';
 
-void main() => runApp(MyApp());
+//TODO: definir utils: arquivos para temas, fontes e constantes
+void main() => runApp(
+      ModularApp(
+        module: AppModule(),
+        child: MyApp(),
+      ),
+    );
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-          accentColor: ThemeData.dark().scaffoldBackgroundColor,
-          primaryColor: ThemeData.dark().scaffoldBackgroundColor),
-      home: HomeScreen(),
-    );
+          //deixei essa cor pra ficar uniforme
+          primaryColor: Colors.black,
+          scaffoldBackgroundColor: Colors.black),
+      initialRoute: "/",
+    ).modular();
   }
 }
