@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CardContainer extends StatelessWidget {
-  const CardContainer(
-      {Key key, @required this.image, @required this.x, @required this.y})
-      : super(key: key);
-
+  const CardContainer({required this.image, required this.x, required this.y});
   final NetworkImage image;
   final double x;
   final double y;

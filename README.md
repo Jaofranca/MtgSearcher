@@ -1,3 +1,14 @@
+# HUGE UPDATE!!
+i've remade the app, the changes are:
+> * Now the app is made using clean architecture, this will make the future improvements of the app easier to implement
+> * Added Modular, a dependency injection Package.
+> * Implemented State management with mobX
+
+Future changes:
+> - [ ] Save your favorite cards to see even in offline mode
+> - [ ] Error handling with toast messages
+> - [ ] a cleaner UI 
+
 # MtgSearcher
 A Magic the gathering card searcher made using **Magic the gathering API : [MagicApi](https://docs.magicthegathering.io/)** 
 
